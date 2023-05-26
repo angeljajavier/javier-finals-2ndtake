@@ -9,7 +9,7 @@ $app = AppFactory::create();
 $app->addRoutingMiddleware();
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
+    $response->getBody()->write("Welcome to my hall!");
     return $response;
 });
 
@@ -156,7 +156,7 @@ $app->delete('/employee/delete/{id}', function (Request $request, Response $resp
     $connect = $db->connect();
 
     if (mysqli_query($connect, $sql)) {
-        $response->getBody()->write("Record Delete Successfully");
+        $response->getBody()->write("Record Deleted Successfully");
     } 
     else {
         $response->getBody()->write("Error: Delete Record");
